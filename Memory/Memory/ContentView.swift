@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
+        // ZStack will combine other views, ViewBuilder
         ZStack(content: {
             RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 4.0)
 
