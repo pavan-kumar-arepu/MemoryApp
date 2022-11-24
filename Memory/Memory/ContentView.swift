@@ -9,17 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello Pavan, Welcome to Swift UI World!")
+        
+        ZStack(content: {
+            RoundedRectangle(cornerRadius: 20).stroke(lineWidth: 4.0)
+
+            Text("Hello Pavan!")
                 .fontWeight(.bold)
-                .foregroundColor(Color.green)
                 .multilineTextAlignment(.center)
-        }
+        })
+        .padding()
+        .foregroundColor(/*@START_MENU_TOKEN@*/.green/*@END_MENU_TOKEN@*/)
     }
 }
+
+
+
+
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
