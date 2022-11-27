@@ -6,17 +6,20 @@
 //
 
 import SwiftUI
+  
 
 struct ContentView: View {
+    
+    var emojis = ["🇧🇴","🏁","🇧🇧", "🏳️‍⚧️","🇦🇺","🇧🇿","🇧🇯","🚩","🏳️‍🌈","🇺🇳","🇦🇫"]
     var body: some View {
         HStack {
-            CardView(content: "🦜")
-            CardView(content: "🚗")
-            CardView(content: "🐱")
-            CardView(content: "🐥")
+            ForEach(emojis, id: \.self) { emoji in
+                CardView(content: emoji)
+            }
+             
         }
         .padding(.horizontal)
-        .foregroundColor(.blue)
+        .foregroundColor(.red)
     }
 }
 
@@ -28,11 +31,11 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            let shape = RoundedRectangle(cornerRadius: 5.0)
+            let shape = RoundedRectangle(cornerRadius: 20.0)
             //let shape = Circle()
             if isFaceUp {
-                shape.fill().foregroundColor(.green)
-                shape.stroke(lineWidth: 4.0)
+                shape.fill().foregroundColor(.white)
+                shape.stroke(lineWidth: 3.0)
                 Text(content).font(.largeTitle)
             } else {
                 shape.fill()
