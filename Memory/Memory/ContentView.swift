@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-  
+
 
 struct ContentView: View {
     
@@ -21,25 +21,45 @@ struct ContentView: View {
                 }
             }
             
+            Spacer(minLength: 20)
+            
             HStack {
-                Button {
-                    emojiCount += 1
-                } label: {
-                    Text("Add Card")
-                }
+                remove
                 Spacer()
-                Button {
-                    emojiCount -= 1
-                } label: {
-                    Text("Remove Card")
-                }
-            }.padding(.horizontal)
+                add
+                
+            }
+            .font(.largeTitle)
+            .padding(.horizontal)
+            
         }
-       
+        
         .padding(.horizontal)
-        .foregroundColor(.red)
+        .foregroundColor(.green)
+    }
+    
+    var add: some View {
+        Button {
+            if emojiCount < emojis.count {
+                emojiCount += 1
+            }
+        } label: {
+            Image(systemName: "plus.circle.fill")
+        }
+    }
+    
+    var remove: some View {
+        Button {
+            if emojiCount > 1 {
+                emojiCount -= 1
+            }
+            
+        } label: {
+            Image(systemName: "minus.circle.fill")
+        }
     }
 }
+
 
 
 
