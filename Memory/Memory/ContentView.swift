@@ -7,73 +7,99 @@
 
 import SwiftUI
 
-
 struct ContentView: View {
     
-    var emojis = ["🇧🇴","🏁","🇧🇧", "🏳️‍⚧️","🇦🇺","🇧🇿","🇧🇯","🚩","🏳️‍🌈","🇺🇳","🇦🇫","🇧🇯","🚩","🏳️‍🌈","🇺🇳","🇦🇫"]
-    
-    @State var emojiCount = 16
+    var flagTheme = ["🇧🇴","🏁","🇮🇳", "🏳️‍⚧️","🇦🇺","🇧🇿","🇧🇯","🚩"]
+    var vehicleTheme = ["🚗","🚙","🚌","🚎","🏎","🚐","🚕","🚁"]
+    var fruitTheme = ["🍑","🍊","🍌","🍇","🍏","🍒","🍋","🥭"]
+
+    @State var index = 0
+
     var body: some View {
+        
+        let themes = [flagTheme, vehicleTheme, fruitTheme]
+        
+        let theme = themes[index]
+
         VStack {
+            
+            topTitle.font(.largeTitle)
+            
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 75))]) {
-                ForEach(emojis[0..<emojiCount], id: \.self) { emoji in
+                
+                ForEach(theme[0..<theme.count], id: \.self) { emoji in
                     CardView(content: emoji).aspectRatio(2/3, contentMode: .fit)
                 }
-            }.foregroundColor(.green)
+            }.foregroundColor(.red)
             
-            Spacer(minLength: 20)
+            Spacer()
             
             HStack {
-                remove
+                flag.font(.largeTitle)
                 Spacer()
-                add
-                
-            }
-            .font(.largeTitle)
-            .padding(.horizontal)
+                vehicle.font(.largeTitle)
+                Spacer()
+                Fruits.font(.largeTitle)
+            }.padding(.horizontal)
+
             
-        }
-        .padding(.horizontal)
-        
+        }.padding(.horizontal)
+       
+      
     }
     
-    var add: some View {
+    
+    // Top Title
+    
+    var topTitle: some View {
+        Text("Memorize!")
+    }
+    // Add Themes at the bottom
+    
+    // Flag Theme
+    var flag: some View {
         Button {
-            if emojiCount < emojis.count {
-                emojiCount += 1
-            }
+            index = 0
         } label: {
-            Image(systemName: "plus.circle.fill")
+            Image(systemName: "flag.fill")
         }
     }
     
-    var remove: some View {
+    // Vehicle Theme
+    var vehicle: some View {
         Button {
-            if emojiCount > 1 {
-                emojiCount -= 1
-            }
-            
+            index = 1
         } label: {
-            Image(systemName: "minus.circle.fill")
+            Image(systemName: "car.fill")
+        }
+    }
+    
+    // Fruits Theme
+    var Fruits: some View {
+        Button {
+            index = 2
+        } label: {
+            Image(systemName: "bird.fill")
+            
         }
     }
 }
 
 
-
-
 struct CardView: View {
     var content: String
-    @State var isFaceUp: Bool = true
+    @State var isFaceUp = true
     
     var body: some View {
+        
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 20.0)
-            //let shape = Circle()
+            
             if isFaceUp {
                 shape.fill().foregroundColor(.white)
-                shape.strokeBorder(lineWidth: 5.0)
-                Text(content).font(.largeTitle)
+                shape.strokeBorder(lineWidth: 4.0).foregroundColor(.red)
+                Text(content)
+                    .font(.largeTitle)
             } else {
                 shape.fill()
             }
@@ -88,18 +114,9 @@ struct CardView: View {
 
 
 
-
-
-
-
-
-
-
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(.light)
     }
 }

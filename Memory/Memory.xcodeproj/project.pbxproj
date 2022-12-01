@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BA63FA029393A8D00F52F88 /* MemoryGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA63F9F29393A8D00F52F88 /* MemoryGameModel.swift */; };
+		0BA63FA229393B6400F52F88 /* MemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA63FA129393B6400F52F88 /* MemoryGameViewModel.swift */; };
 		0BB3D13A292AD29B00372233 /* MemoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3D139292AD29B00372233 /* MemoryApp.swift */; };
 		0BB3D13C292AD29B00372233 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3D13B292AD29B00372233 /* ContentView.swift */; };
 		0BB3D13E292AD29E00372233 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB3D13D292AD29E00372233 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BA63F9F29393A8D00F52F88 /* MemoryGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameModel.swift; sourceTree = "<group>"; };
+		0BA63FA129393B6400F52F88 /* MemoryGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameViewModel.swift; sourceTree = "<group>"; };
 		0BB3D136292AD29B00372233 /* Memory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB3D139292AD29B00372233 /* MemoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryApp.swift; sourceTree = "<group>"; };
 		0BB3D13B292AD29B00372233 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				0BB3D139292AD29B00372233 /* MemoryApp.swift */,
 				0BB3D13B292AD29B00372233 /* ContentView.swift */,
+				0BA63F9F29393A8D00F52F88 /* MemoryGameModel.swift */,
+				0BA63FA129393B6400F52F88 /* MemoryGameViewModel.swift */,
 				0BB3D13D292AD29E00372233 /* Assets.xcassets */,
 				0BB3D13F292AD29E00372233 /* Preview Content */,
 			);
@@ -139,6 +145,8 @@
 			files = (
 				0BB3D13C292AD29B00372233 /* ContentView.swift in Sources */,
 				0BB3D13A292AD29B00372233 /* MemoryApp.swift in Sources */,
+				0BA63FA029393A8D00F52F88 /* MemoryGameModel.swift in Sources */,
+				0BA63FA229393B6400F52F88 /* MemoryGameViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
