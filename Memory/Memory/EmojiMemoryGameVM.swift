@@ -8,7 +8,7 @@
 import Foundation
 
 
-class MemoryGameViewModel {
+class EmojiMemoryGameVM {
     
     static let flagTheme = ["🇧🇴","🏁","🇮🇳", "🏳️‍⚧️","🇦🇺","🇧🇿","🇧🇯","🚩"]
     
